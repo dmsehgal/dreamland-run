@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dreamland Run</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- CHARACTER CREATOR -->
+  <section id="screen-character" class="screen active">
+    <h1>Dreamland Run</h1>
+    <p class="subtitle">Design your dreamer</p>
+    <div class="creator">
+      <canvas id="charPreview" width="200" height="260"></canvas>
+      <div class="options">
+        <div class="option-group">
+          <label>Look</label>
+          <div class="swatches" id="gender-swatches">
+            <button data-value="girl" class="swatch-btn active">Girl</button>
+            <button data-value="boy" class="swatch-btn">Boy</button>
+          </div>
+        </div>
+        <div class="option-group">
+          <label>Skin Tone</label>
+          <div class="swatches" id="skin-swatches"></div>
+        </div>
+        <div class="option-group">
+          <label>Hair Color</label>
+          <div class="swatches" id="hair-swatches"></div>
+        </div>
+        <div class="option-group">
+          <label>Outfit Color</label>
+          <div class="swatches" id="outfit-swatches"></div>
+        </div>
+        <div class="option-group">
+          <label>Accessories</label>
+          <div class="swatches">
+            <button data-acc="hat" class="swatch-btn toggle">Hat</button>
+            <button data-acc="glasses" class="swatch-btn toggle">Glasses</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="primary-btn" id="toIslands">Choose Your Island &rarr;</button>
+  </section>
+
+  <!-- ISLAND SELECT -->
+  <section id="screen-islands" class="screen">
+    <h1>Rainbow River</h1>
+    <p class="subtitle">Pick an island to run</p>
+    <div id="riverMap"></div>
+    <button class="secondary-btn" id="backToCreator">&larr; Edit Character</button>
+  </section>
+
+  <!-- GAME -->
+  <section id="screen-game" class="screen">
+    <div id="hud">
+      <span id="hud-island"></span>
+      <span id="hud-stars">&#9733; 0</span>
+      <span id="hud-progress">Distance: 0%</span>
+    </div>
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+    <p class="hint">Tap / Click / Press Space to jump</p>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-box">
+        <h2 id="overlay-title"></h2>
+        <p id="overlay-text"></p>
+        <button class="primary-btn" id="overlay-retry">Retry Island</button>
+        <button class="secondary-btn" id="overlay-map">Back to Map</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINALE -->
+  <section id="screen-finale" class="screen">
+    <h1>&#127752; You Crossed the Rainbow River! &#127752;</h1>
+    <p class="subtitle" id="finaleStars"></p>
+    <div id="finaleCanvasWrap"><canvas id="finaleCanvas" width="200" height="260"></canvas></div>
+    <button class="primary-btn" id="finaleReplay">Play Again</button>
+  </section>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
