@@ -178,6 +178,29 @@ h1{
 
 .hint{color:#7a6da0; margin-top:8px;}
 
+#touchControls{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-top:14px;
+}
+.ctrl-btn{
+  font-size:1.4em;
+  font-weight:bold;
+  width:64px;
+  height:56px;
+  border-radius:14px;
+  border:none;
+  background:#fff;
+  color:var(--ink);
+  box-shadow:0 4px 0 #d8cdf5;
+  cursor:pointer;
+  user-select:none;
+  touch-action:manipulation;
+}
+.ctrl-btn.jump{width:120px; background:var(--pink); box-shadow:0 4px 0 #e08fc0; font-size:1.1em;}
+.ctrl-btn:active{transform:translateY(2px); box-shadow:none;}
+
 .overlay{
   position:fixed;
   inset:0;
